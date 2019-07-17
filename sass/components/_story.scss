@@ -11,10 +11,24 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
   & > * {
     transform: skewX(12deg);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__shape {
@@ -30,6 +44,11 @@
     transform: translateX(-2.5rem) skewX(12deg);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    overflow: hidden;
+
+    @include respond(phone) {
+      transform: translateX(-2.5rem) skewX(0);
+    }
   }
 
   &__img {
